@@ -1,0 +1,25 @@
+digraph ROBDD {
+  labelloc="t";
+  label="(p | (q & r)) -> ~s";
+  node [fontname="Helvetica"];
+
+  // decision nodes
+  n5 [shape=circle, label="p"];
+  n4 [shape=circle, label="q"];
+  n3 [shape=circle, label="r"];
+  n2 [shape=circle, label="s"];
+
+  // terminals
+  n0 [shape=box, label="False"];
+  n1 [shape=box, label="True"];
+
+  // edges (solid = 1/high, dashed = 0/low)
+  n5 -> n4 [style=dashed, label="0"];
+  n5 -> n2 [style=solid, label="1"];
+  n4 -> n1 [style=dashed, label="0"];
+  n4 -> n3 [style=solid, label="1"];
+  n3 -> n1 [style=dashed, label="0"];
+  n3 -> n2 [style=solid, label="1"];
+  n2 -> n1 [style=dashed, label="0"];
+  n2 -> n0 [style=solid, label="1"];
+}
