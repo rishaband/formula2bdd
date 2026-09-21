@@ -60,6 +60,4 @@ src/                   implementations
 app/main.cpp           CLI
 tests/                 brute-force oracle + canonicity tests
 ```
-## Notes and next steps
-Right now construction uses direct Shannon recursion, which walks all 2ⁿ leaf assignments. That's perfectly fine at teaching scale, and the obvious next step for handling bigger formulas is the classic memoized `apply` algorithm.
-A few other things that would be fun to add: building the PNG/SVG shell-out into the CLI directly, a raw (unreduced) decision-tree mode so you can see the difference, dynamic variable reordering, and a D3.js interactive web view.
+
